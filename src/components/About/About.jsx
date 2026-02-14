@@ -13,7 +13,7 @@ function About({ t }) {
           <div className="about-image">
             <div className="image-wrapper">
               <img
-                src="/profile.jpg"
+                src={`${import.meta.env.BASE_URL}profile.jpg`}
                 alt="Marvyn Harryson"
                 className="profile-image"
               />
