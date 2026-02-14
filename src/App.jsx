@@ -67,7 +67,7 @@ function App() {
 
       <Experience t={t} />
 
-      <Projects t={t} />
+      {/* <Projects t={t} /> */}
 
       <Skills t={t} skills={skills} />
 

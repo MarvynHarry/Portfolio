@@ -1,9 +1,23 @@
 /* About Section */
 .about {
-  background: #1e293b;
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
   position: relative;
   padding: 6rem 0;
   animation: fadeIn 1s ease-out;
+  overflow: hidden;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(102, 126, 234, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: floatSlow 8s ease-in-out infinite;
+  pointer-events: none;
 }
 
 @keyframes fadeIn {
@@ -88,9 +102,11 @@
   width: 300px;
   height: 300px;
   object-fit: cover;
+  object-position: center 20%;
   border-radius: 20px;
   position: relative;
   z-index: 2;
+  background: #1e293b;
   border: 3px solid rgba(102, 126, 234, 0.4);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
@@ -156,27 +172,54 @@
   display: flex;
   gap: 1rem;
   padding: 1.5rem;
-  background: rgba(102, 126, 234, 0.05);
-  border-radius: 12px;
-  border: 1px solid rgba(102, 126, 234, 0.1);
-  transition: all 0.3s ease;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
+  border-radius: 16px;
+  border: 2px solid rgba(102, 126, 234, 0.15);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.highlight-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.highlight-item:hover::before {
+  left: 100%;
 }
 
 .highlight-item:hover {
-  background: rgba(102, 126, 234, 0.1);
-  border-color: rgba(102, 126, 234, 0.3);
-  transform: translateX(10px);
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+  border-color: rgba(102, 126, 234, 0.4);
+  transform: translateX(15px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
 }
 
 .highlight-icon {
   font-size: 2rem;
-  min-width: 50px;
-  height: 50px;
+  min-width: 55px;
+  height: 55px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(102, 126, 234, 0.1);
-  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+  border-radius: 12px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 1;
+}
+
+.highlight-item:hover .highlight-icon {
+  transform: rotate(360deg) scale(1.1);
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 100%);
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
 }
 
 .highlight-text h4 {

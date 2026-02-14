@@ -1,8 +1,30 @@
 /* Footer */
 .footer {
-  background: #0a0f1a;
-  padding: 2.5rem 0;
-  border-top: 1px solid rgba(102, 126, 234, 0.1);
+  background: linear-gradient(180deg, #0f172a 0%, #0a0f1a 100%);
+  padding: 3rem 0;
+  border-top: 2px solid rgba(102, 126, 234, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #667eea, transparent);
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 .container {
@@ -33,11 +55,31 @@
   color: #94a3b8;
   text-decoration: none;
   font-size: 0.95rem;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+}
+
+.footer-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
 }
 
 .footer-links a:hover {
-  color: #a78bfa;
+  color: #c4b5fd;
+  transform: translateY(-2px);
+}
+
+.footer-links a:hover::after {
+  width: 100%;
 }
 
 /* Responsive Design */

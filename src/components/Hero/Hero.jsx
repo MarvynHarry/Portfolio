@@ -10,30 +10,36 @@ function Hero({ scrollY, t }) {
         <div className="grid-pattern"></div>
 
         {/* Floating Tech Icons */}
-        <i className="tech-float tech-1 devicon-react-original colored"></i>
+        <i className="tech-float tech-1 devicon-csharp-plain colored"></i>
         <i className="tech-float tech-2 devicon-dotnetcore-plain colored"></i>
-        <i className="tech-float tech-3 devicon-amazonwebservices-plain-wordmark colored"></i>
-        <i className="tech-float tech-4 devicon-csharp-plain colored"></i>
-        <i className="tech-float tech-5 devicon-azure-plain colored"></i>
-        <i className="tech-float tech-6 devicon-typescript-plain colored"></i>
-        <i className="tech-float tech-7 devicon-angularjs-plain colored"></i>
-        <i className="tech-float tech-8 devicon-docker-plain colored"></i>
-        <i className="tech-float tech-9 devicon-azuresqldatabase-plain colored"></i>
-        <i className="tech-float tech-10 devicon-nodejs-plain colored"></i>
-        <i className="tech-float tech-11 devicon-javascript-plain colored"></i>
-        <i className="tech-float tech-12 devicon-blazor-original colored"></i>
-        <i className="tech-float tech-13 devicon-mysql-plain colored"></i>
-        <i className="tech-float tech-14 devicon-githubactions-plain colored"></i>
-        <i className="tech-float tech-15 devicon-mongodb-plain colored"></i>
-        <i className="tech-float tech-16 devicon-html5-plain colored"></i>
-        <i className="tech-float tech-17 devicon-css3-plain colored"></i>
-        <i className="tech-float tech-18 devicon-vscode-plain colored"></i>
-        <i className="tech-float tech-19 devicon-oracle-plain colored"></i>
-        <i className="tech-float tech-20 devicon-dynamodb-plain colored"></i>
-        <i className="tech-float tech-21 devicon-postman-plain colored"></i>
-        <i className="tech-float tech-22 devicon-databricks-plain colored"></i>
-        <i className="tech-float tech-23 devicon-git-plain colored"></i>
-        <i className="tech-float tech-24 devicon-fastapi-plain colored"></i>
+        <i className="tech-float tech-3 devicon-react-original colored"></i>
+        <i className="tech-float tech-4 devicon-angularjs-plain colored"></i>
+        <i className="tech-float tech-5 devicon-typescript-plain colored"></i>
+        <i className="tech-float tech-6 devicon-javascript-plain colored"></i>
+        <i className="tech-float tech-7 devicon-nodejs-plain colored"></i>
+        <i className="tech-float tech-8 devicon-python-plain colored"></i>
+        <i className="tech-float tech-9 devicon-amazonwebservices-plain-wordmark colored"></i>
+        <i className="tech-float tech-10 devicon-azure-plain colored"></i>
+        <i className="tech-float tech-11 devicon-docker-plain colored"></i>
+        <i className="tech-float tech-12 devicon-kubernetes-plain colored"></i>
+        <i className="tech-float tech-13 devicon-microsoftsqlserver-plain colored"></i>
+        <i className="tech-float tech-14 devicon-mysql-original colored"></i>
+        <i className="tech-float tech-15 devicon-postgresql-plain colored"></i>
+        <i className="tech-float tech-16 devicon-oracle-original colored"></i>
+        <i className="tech-float tech-17 devicon-mongodb-plain colored"></i>
+        <i className="tech-float tech-18 devicon-redis-plain colored"></i>
+        <i className="tech-float tech-19 devicon-git-plain colored"></i>
+        <i className="tech-float tech-20 devicon-azuredevops-plain colored"></i>
+        <i className="tech-float tech-21 devicon-vuejs-plain colored"></i>
+        <i className="tech-float tech-22 devicon-html5-plain colored"></i>
+        <i className="tech-float tech-23 devicon-css3-plain colored"></i>
+        <i className="tech-float tech-24 devicon-tailwindcss-original colored"></i>
+        <i className="tech-float tech-25 devicon-firebase-plain colored"></i>
+        <i className="tech-float tech-26 devicon-express-original"></i>
+        <i className="tech-float tech-27 devicon-swagger-plain colored"></i>
+        <i className="tech-float tech-28 devicon-jira-plain colored"></i>
+        <i className="tech-float tech-29 devicon-githubactions-plain"></i>
+        <i className="tech-float tech-30 devicon-vscode-plain colored"></i>
       </div>
 
       <div className="hero-content" style={{ transform: `translateY(${scrollY * 0.3}px)` }}>

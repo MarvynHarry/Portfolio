@@ -94,16 +94,18 @@
   font-size: 3rem;
   animation: techFloat 20s infinite ease-in-out;
   z-index: 1;
-  transition: all 0.3s ease;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
-  opacity: 0.8;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 .tech-float:hover {
-  transform: scale(1.25) rotate(5deg);
+  transform: scale(1.3) rotate(8deg);
   z-index: 5;
-  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 25px rgba(102, 126, 234, 0.5));
   opacity: 1;
+  animation-play-state: paused;
 }
 
 @keyframes techFloat {
@@ -146,6 +148,12 @@
 .tech-22 { top: 45%; left: 20%; animation-delay: 2.5s; animation-duration: 24s; }
 .tech-23 { top: 85%; left: 45%; animation-delay: 4.5s; animation-duration: 26s; }
 .tech-24 { top: 30%; left: 92%; animation-delay: 1.5s; animation-duration: 28s; }
+.tech-25 { top: 68%; left: 35%; animation-delay: 2.8s; animation-duration: 25s; }
+.tech-26 { top: 28%; left: 22%; animation-delay: 4.2s; animation-duration: 27s; }
+.tech-27 { top: 48%; left: 12%; animation-delay: 3.6s; animation-duration: 24s; }
+.tech-28 { top: 78%; left: 65%; animation-delay: 5.4s; animation-duration: 26s; }
+.tech-29 { top: 38%; left: 82%; animation-delay: 1.9s; animation-duration: 29s; }
+.tech-30 { top: 58%; left: 88%; animation-delay: 3.3s; animation-duration: 23s; }
 
 .hero-content {
   max-width: 900px;
@@ -170,15 +178,23 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 1.25rem;
-  background: rgba(102, 126, 234, 0.1);
-  border: 1px solid rgba(102, 126, 234, 0.3);
+  padding: 0.65rem 1.5rem;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+  border: 2px solid rgba(102, 126, 234, 0.4);
   border-radius: 50px;
-  color: #a78bfa;
+  color: #c4b5fd;
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 2rem;
   animation: slideInDown 1s ease-out 0.2s both;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+}
+
+.hero-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+  border-color: #667eea;
 }
 
 @keyframes slideInDown {
@@ -400,7 +416,22 @@
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
-  animation: fadeInUp 1s ease-out 1s both;
+  animation: fadeInUp 1s ease-out 1s both, bounce 2s ease-in-out 2s infinite;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.scroll-indicator:hover {
+  transform: translateX(-50%) scale(1.1);
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
 }
 
 .mouse {
@@ -468,12 +499,17 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .tech-float:nth-child(n+16) {
+  .tech-float:nth-child(n+21) {
     display: none;
   }
 
   .tech-float {
     font-size: 2.5rem;
+    opacity: 0.6;
+  }
+
+  .hero {
+    padding: 6rem 1.5rem 3rem;
   }
 
   .hero-title {
@@ -484,6 +520,10 @@
     font-size: 1.25rem;
   }
 
+  .hero-description {
+    font-size: 1rem;
+  }
+
   .hero-stats {
     flex-direction: column;
     gap: 1.5rem;
@@ -492,29 +532,47 @@
   .stat-divider {
     display: none;
   }
+
+  .stat-number {
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .tech-float:nth-child(n+10) {
+  .tech-float:nth-child(n+13) {
     display: none;
   }
 
   .tech-float {
     font-size: 2rem;
-    opacity: 0.7;
+    opacity: 0.5;
+  }
+
+  .hero {
+    padding: 5rem 1rem 2rem;
   }
 
   .hero-title {
     font-size: 2rem;
   }
 
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
   .hero-buttons {
     flex-direction: column;
     width: 100%;
+    gap: 1rem;
   }
 
   .btn {
     width: 100%;
     justify-content: center;
+    padding: 0.875rem 2rem;
+  }
+
+  .stat-number {
+    font-size: 1.75rem;
   }
 }
