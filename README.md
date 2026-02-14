@@ -73,10 +73,29 @@ Portfolio/
 
 ## Despliegue
 
-El proyecto puede desplegarse en cualquier servicio de hosting estático como:
+### GitHub Pages (Automático)
+
+El proyecto está configurado para desplegarse automáticamente en GitHub Pages mediante GitHub Actions:
+
+1. Cada push a la rama `main` activará el despliegue automático
+2. La página estará disponible en: https://marvynharry.github.io/Portfolio/
+
+El workflow de GitHub Actions se encuentra en `.github/workflows/deploy.yml`
+
+### Despliegue Manual (Opcional)
+
+Si prefieres desplegar manualmente usando gh-pages:
+
+```bash
+npm run build
+npm run deploy
+```
+
+### Otros servicios de hosting
+
+El proyecto también puede desplegarse en:
 - Vercel
 - Netlify
-- GitHub Pages
 - Cloudflare Pages
 
 Para generar los archivos de producción:
@@ -85,6 +104,8 @@ npm run build
 ```
 
 Los archivos compilados estarán en la carpeta `dist/`.
+
+**Nota:** Si despliegas en otro servicio, asegúrate de ajustar el `base` en `vite.config.js` según sea necesario.
 
 ## Autor
 
