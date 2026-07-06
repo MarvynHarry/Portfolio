@@ -38,3 +38,7 @@ dist-ssr
 
 # OS
 Thumbs.db
+
+
+# Backup files
+*.backup
