@@ -63,10 +63,10 @@ section {
   align-items: center;
   gap: 0.75rem;
   padding: 0.65rem 1.75rem;
-  background: linear-gradient(135deg, rgba(11, 31, 58, 0.09) 0%, rgba(5, 150, 105, 0.09) 100%);
-  border: 2px solid rgba(11, 31, 58, 0.18);
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+  border: 2px solid rgba(102, 126, 234, 0.3);
   border-radius: 50px;
-  color: #047857;
+  color: #c4b5fd;
   font-size: 0.875rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
@@ -75,7 +75,7 @@ section {
   position: relative;
   overflow: visible;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(11, 31, 58, 0.12);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
 }
 
 .section-label::before {
@@ -104,7 +104,7 @@ section {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(11, 31, 58, 0.06);
+  background: rgba(102, 126, 234, 0.1);
   border-radius: 50px;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -116,8 +116,8 @@ section {
 }
 
 .section-label:hover {
-  border-color: rgba(11, 31, 58, 0.3);
-  box-shadow: 0 4px 15px rgba(11, 31, 58, 0.18);
+  border-color: rgba(102, 126, 234, 0.5);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
 .section-label > * {
@@ -127,11 +127,19 @@ section {
 
 .section-title {
   font-size: 3.5rem;
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  color: #0b1f3a;
+  font-weight: 800;
+  color: #f8fafc;
   position: relative;
   display: inline-block;
+  background: linear-gradient(
+    135deg,
+    #f8fafc 0%,
+    #e2e8f0 50%,
+    #d1d5db 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 1rem;
 }
 
@@ -143,9 +151,9 @@ section {
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(11, 31, 58, 0.18);
+  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
 }
 
 /* Responsive Design - Global */
