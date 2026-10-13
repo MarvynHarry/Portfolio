@@ -15,7 +15,7 @@ export const translations = {
       role: "Senior .NET & Cloud Engineer",
       description:
         "I build secure, scalable systems for fintech, banking, and insurance: payment platforms, APIs, microservices on AWS and Azure, and legacy modernization.",
-      viewProjects: "View Projects",
+      viewProjects: "View Experience",
       contactMe: "Contact Me",
       downloadCV: "Download CV",
       stats: {
@@ -205,7 +205,7 @@ export const translations = {
       role: "Senior .NET & Cloud Engineer",
       description:
         "Construyo sistemas seguros y escalables para fintech, banca y seguros: plataformas de pago, APIs, microservicios en AWS y Azure, y modernización de sistemas legacy.",
-      viewProjects: "Ver Proyectos",
+      viewProjects: "Ver Experiencia",
       contactMe: "Contáctame",
       downloadCV: "Descargar CV",
       stats: {
