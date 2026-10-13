@@ -12,9 +12,9 @@ export const translations = {
       badge: "Available for projects",
       greeting: "Hi, I'm",
       name: "Marvyn Harryson",
-      role: "Full Stack Developer & Problem Solver",
+      role: "Senior .NET & Cloud Engineer",
       description:
-        "Transforming ideas into exceptional digital experiences. Specialized in creating modern, scalable, and user-centered applications.",
+        "I build secure, scalable systems for fintech, banking, and insurance: payment platforms, APIs, microservices on AWS and Azure, and legacy modernization.",
       viewProjects: "View Projects",
       contactMe: "Contact Me",
       downloadCV: "Download CV",
@@ -27,7 +27,7 @@ export const translations = {
     about: {
       label: "Get to know me",
       title: "About Me",
-      lead: "I'm a developer passionate about creating technological solutions that generate real impact. With more than 3 years of experience in web development, I specialize in building modern and scalable applications.",
+      lead: "I'm a developer passionate about creating technological solutions that generate real impact. With more than 7 years of experience building enterprise software for banking, insurance, and fintech, I specialize in modern, scalable, and secure applications.",
       p1: "My approach focuses on writing clean, maintainable, and efficient code. I love working on both frontend and backend, which allows me to have a complete vision of projects and deliver comprehensive solutions.",
       p2: "When I'm not coding, I like to stay updated with the latest technologies, contribute to open source projects, and share knowledge with the developer community.",
       highlights: [
@@ -181,6 +181,8 @@ export const translations = {
         submit: "Send Message",
         successMessage: "Message sent successfully!",
         errorMessage: "Please fill in all required fields.",
+        sending: "Sending...",
+        sendError: "The message could not be sent. Please email me directly at marvynharry@gmail.com.",
       },
     },
     footer: {
@@ -200,9 +202,9 @@ export const translations = {
       badge: "Disponible para proyectos",
       greeting: "Hola, soy",
       name: "Marvyn Harryson",
-      role: "Desarrollador Full Stack & Solucionador de Problemas",
+      role: "Senior .NET & Cloud Engineer",
       description:
-        "Transformo ideas en experiencias digitales excepcionales. Especializado en crear aplicaciones web modernas, escalables y centradas en el usuario.",
+        "Construyo sistemas seguros y escalables para fintech, banca y seguros: plataformas de pago, APIs, microservicios en AWS y Azure, y modernización de sistemas legacy.",
       viewProjects: "Ver Proyectos",
       contactMe: "Contáctame",
       downloadCV: "Descargar CV",
@@ -215,7 +217,7 @@ export const translations = {
     about: {
       label: "Conóceme",
       title: "Sobre Mí",
-      lead: "Soy un desarrollador apasionado por crear soluciones tecnológicas que generen un impacto real. Con más de 3 años de experiencia en el desarrollo web, me especializo en construir aplicaciones modernas y escalables.",
+      lead: "Soy un desarrollador apasionado por crear soluciones tecnológicas que generen un impacto real. Con más de 7 años de experiencia construyendo software empresarial para banca, seguros y fintech, me especializo en aplicaciones modernas, escalables y seguras.",
       p1: "Mi enfoque se centra en escribir código limpio, mantenible y eficiente. Me encanta trabajar tanto en el frontend como en el backend, lo que me permite tener una visión completa de los proyectos y entregar soluciones integrales.",
       p2: "Cuando no estoy programando, me gusta mantenerme actualizado con las últimas tecnologías, contribuir a proyectos de código abierto y compartir conocimientos con la comunidad de desarrolladores.",
       highlights: [
@@ -369,6 +371,8 @@ export const translations = {
         submit: "Enviar Mensaje",
         successMessage: "¡Mensaje enviado con éxito!",
         errorMessage: "Por favor completa todos los campos requeridos.",
+        sending: "Enviando...",
+        sendError: "No se pudo enviar el mensaje. Escríbeme directamente a marvynharry@gmail.com.",
       },
     },
     footer: {

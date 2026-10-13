@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import './Contact.css'
 
+// Clave gratuita de https://web3forms.com (definir VITE_WEB3FORMS_KEY en .env o en el secret del workflow)
+const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY || ''
+
 function Contact({ t }) {
   const [formData, setFormData] = useState({
     name: '',
@@ -18,7 +21,7 @@ function Contact({ t }) {
     }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
 
     // Validación básica
@@ -27,16 +30,35 @@ function Contact({ t }) {
       return
     }
 
-    // Crear el mailto link
-    const mailtoLink = `mailto:marvynharry@gmail.com?subject=${encodeURIComponent(formData.subject || 'Contacto desde Portfolio')}&body=${encodeURIComponent(`Nombre: ${formData.name}\nEmail: ${formData.email}\n\nMensaje:\n${formData.message}`)}`
+    // Sin clave de Web3Forms: abrir el cliente de correo como respaldo
+    if (!WEB3FORMS_KEY) {
+      window.location.href = `mailto:marvynharry@gmail.com?subject=${encodeURIComponent(formData.subject || 'Contacto desde Portfolio')}&body=${encodeURIComponent(`Nombre: ${formData.name}\nEmail: ${formData.email}\n\nMensaje:\n${formData.message}`)}`
+      return
+    }
 
-    window.location.href = mailtoLink
+    setFormStatus('sending')
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: formData.subject || 'Contacto desde Portfolio',
+          from_name: 'Portfolio',
+          name: formData.name,
+          email: formData.email,
+          message: formData.message
+        })
+      })
+      const data = await res.json()
+      if (!data.success) throw new Error(data.message)
 
-    // Limpiar formulario
-    setFormData({ name: '', email: '', subject: '', message: '' })
-    setFormStatus('success')
-
-    setTimeout(() => setFormStatus(''), 3000)
+      setFormData({ name: '', email: '', subject: '', message: '' })
+      setFormStatus('success')
+      setTimeout(() => setFormStatus(''), 5000)
+    } catch {
+      setFormStatus('sendError')
+    }
   }
 
   return (
@@ -172,8 +194,18 @@ function Contact({ t }) {
                 </div>
               )}
 
-              <button type="submit" className="submit-btn">
-                <span>{t.contact.form?.submit || 'Enviar Mensaje'}</span>
+              {formStatus === 'sendError' && (
+                <div className="form-message error">
+                  {t.contact.form?.sendError}
+                </div>
+              )}
+
+              <button type="submit" className="submit-btn" disabled={formStatus === 'sending'}>
+                <span>
+                  {formStatus === 'sending'
+                    ? t.contact.form?.sending
+                    : t.contact.form?.submit || 'Enviar Mensaje'}
+                </span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
