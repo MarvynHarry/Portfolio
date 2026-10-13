@@ -1,8 +1,8 @@
 /* Footer */
 .footer {
-  background: linear-gradient(180deg, #0f172a 0%, #0a0f1a 100%);
+  background: linear-gradient(180deg, #f7f6f2 0%, #efede6 100%);
   padding: 3rem 0;
-  border-top: 2px solid rgba(102, 126, 234, 0.2);
+  border-top: 2px solid rgba(11, 31, 58, 0.12);
   position: relative;
   overflow: hidden;
 }
@@ -14,7 +14,7 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #667eea, transparent);
+  background: linear-gradient(90deg, transparent, #059669, transparent);
   animation: shimmer 3s linear infinite;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .footer-content p {
-  color: #64748b;
+  color: #6b778c;
   font-size: 0.95rem;
 }
 
@@ -52,7 +52,7 @@
 }
 
 .footer-links a {
-  color: #94a3b8;
+  color: #51607a;
   text-decoration: none;
   font-size: 0.95rem;
   transition: all 0.3s ease;
@@ -68,13 +68,13 @@
   left: 50%;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #667eea, #764ba2);
+  background: linear-gradient(90deg, #059669, #047857);
   transition: all 0.3s ease;
   transform: translateX(-50%);
 }
 
 .footer-links a:hover {
-  color: #c4b5fd;
+  color: #047857;
   transform: translateY(-2px);
 }
 

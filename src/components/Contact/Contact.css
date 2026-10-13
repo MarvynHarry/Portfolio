@@ -1,6 +1,6 @@
 /* Contact Section */
 .contact {
-  background: #1e293b;
+  background: #ffffff;
   padding: 6rem 0;
   animation: fadeIn 1s ease-out;
 }
@@ -26,12 +26,15 @@
 }
 
 .section-label {
-  display: inline-block;
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0.5rem 1.5rem;
-  background: rgba(102, 126, 234, 0.1);
-  border: 1px solid rgba(102, 126, 234, 0.2);
+  background: rgba(11, 31, 58, 0.06);
+  border: 1px solid rgba(11, 31, 58, 0.12);
   border-radius: 50px;
-  color: #a78bfa;
+  color: #047857;
   font-size: 0.875rem;
   font-weight: 600;
   margin-bottom: 1rem;
@@ -42,7 +45,7 @@
 .section-title {
   font-size: 3rem;
   font-weight: 800;
-  color: #f8fafc;
+  color: #0b1f3a;
   position: relative;
   display: inline-block;
 }
@@ -51,10 +54,10 @@
   content: '';
   position: absolute;
   bottom: -10px;
-  left: 0;
-  width: 100%;
+  left: 50%;
+  width: 80px;
   height: 4px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
   border-radius: 2px;
 }
 
@@ -65,14 +68,14 @@
 
 .contact-info h3 {
   font-size: 2rem;
-  color: #f8fafc;
+  color: #0b1f3a;
   margin-bottom: 1rem;
   text-align: center;
 }
 
 .contact-info > p {
   text-align: center;
-  color: #94a3b8;
+  color: #51607a;
   font-size: 1.125rem;
   line-height: 1.8;
   margin-bottom: 3rem;
@@ -86,28 +89,28 @@
 
 .contact-card {
   padding: 2rem;
-  background: #0f172a;
+  background: #f7f6f2;
   border-radius: 16px;
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  border: 1px solid rgba(102, 126, 234, 0.2);
+  border: 1px solid rgba(11, 31, 58, 0.12);
   transition: all 0.3s ease;
   overflow: hidden;
 }
 
 .contact-card:hover {
   transform: translateY(-10px);
-  border-color: #667eea;
-  box-shadow: 0 15px 50px rgba(102, 126, 234, 0.4);
+  border-color: #059669;
+  box-shadow: 0 15px 50px rgba(11, 31, 58, 0.24);
 }
 
 .contact-icon {
   width: 60px;
   height: 60px;
   min-width: 60px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -127,7 +130,7 @@
 
 .contact-card h4 {
   font-size: 1.125rem;
-  color: #f8fafc;
+  color: #0b1f3a;
   margin-bottom: 0.25rem;
   font-weight: 600;
 }
@@ -138,7 +141,7 @@
 }
 
 .contact-card p {
-  color: #94a3b8;
+  color: #51607a;
   font-size: 0.95rem;
   word-break: break-word;
   overflow-wrap: break-word;
@@ -154,25 +157,25 @@
 
 .contact-form-section h3 {
   font-size: 2rem;
-  color: #f8fafc;
+  color: #0b1f3a;
   margin-bottom: 1rem;
   text-align: center;
 }
 
 .contact-form-section > p {
   text-align: center;
-  color: #94a3b8;
+  color: #51607a;
   font-size: 1.125rem;
   line-height: 1.8;
   margin-bottom: 2.5rem;
 }
 
 .contact-form {
-  background: #0f172a;
+  background: #f7f6f2;
   padding: 3rem;
   border-radius: 20px;
-  border: 1px solid rgba(102, 126, 234, 0.2);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(11, 31, 58, 0.12);
+  box-shadow: 0 10px 40px rgba(11, 31, 58, 0.12);
 }
 
 .form-group {
@@ -181,7 +184,7 @@
 
 .form-group label {
   display: block;
-  color: #e2e8f0;
+  color: #1f3354;
   font-weight: 600;
   margin-bottom: 0.5rem;
   font-size: 0.95rem;
@@ -191,10 +194,10 @@
 .form-group textarea {
   width: 100%;
   padding: 0.875rem 1.25rem;
-  background: #1e293b;
-  border: 2px solid rgba(102, 126, 234, 0.2);
+  background: #ffffff;
+  border: 2px solid rgba(11, 31, 58, 0.12);
   border-radius: 10px;
-  color: #f8fafc;
+  color: #0b1f3a;
   font-size: 1rem;
   font-family: inherit;
   transition: all 0.3s ease;
@@ -203,13 +206,13 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: #059669;
+  box-shadow: 0 0 0 3px rgba(11, 31, 58, 0.06);
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: #64748b;
+  color: #6b778c;
 }
 
 .form-group textarea {
@@ -240,7 +243,7 @@
 .submit-btn {
   width: 100%;
   padding: 1rem 2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
   color: white;
   border: none;
   border-radius: 10px;
@@ -252,12 +255,12 @@
   justify-content: center;
   gap: 0.75rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 4px 15px rgba(11, 31, 58, 0.24);
 }
 
 .submit-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+  box-shadow: 0 8px 25px rgba(11, 31, 58, 0.3);
 }
 
 .submit-btn:active {
