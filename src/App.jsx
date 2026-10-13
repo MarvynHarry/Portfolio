@@ -43,8 +43,8 @@ function App() {
   // Update page title when language changes
   useEffect(() => {
     const titles = {
-      en: 'Marvyn Harryson - Full Stack Developer',
-      es: 'Marvyn Harryson - Desarrollador Full Stack'
+      en: 'Marvyn Harryson - Senior .NET & Cloud Engineer',
+      es: 'Marvyn Harryson - Senior .NET & Cloud Engineer'
     }
     document.title = titles[language]
   }, [language])

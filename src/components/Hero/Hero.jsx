@@ -81,7 +81,7 @@ function Hero({ scrollY, t }) {
 
         <div className="hero-stats">
           <div className="stat-item">
-            <div className="stat-number">3+</div>
+            <div className="stat-number">7+</div>
             <div className="stat-label">{t.hero.stats.years}</div>
           </div>
           <div className="stat-divider"></div>
