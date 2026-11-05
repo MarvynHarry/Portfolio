@@ -1,62 +1,29 @@
-import { useState } from 'react'
 import './Navbar.css'
 
-function Navbar({ activeSection, scrollY, language, setLanguage, translations }) {
-  const t = translations[language]
-  const [menuOpen, setMenuOpen] = useState(false)
+const SECTIONS = ['about', 'experience', 'skills', 'contact']
 
+function Navbar({ t, language, setLanguage }) {
   return (
-    <nav className={`navbar ${scrollY > 50 ? 'scrolled' : ''}`}>
-      <div className="nav-container">
-        <a href="#home" className="logo">
-          <span className="logo-text">MH</span>
-          <span className="logo-dot"></span>
-        </a>
-        <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
-          {Object.entries(t.nav).map(([key, value]) => (
-            <a
-              key={key}
-              href={`#${key}`}
-              className={activeSection === key ? 'active' : ''}
-              onClick={() => setMenuOpen(false)}
-            >
-              {value}
-            </a>
-          ))}
-        </div>
-
-        <div className="nav-actions">
-          {/* Language Switch */}
-          <div className="language-switch">
-            <button
-              className={`lang-btn ${language === 'en' ? 'active' : ''}`}
-              onClick={() => setLanguage('en')}
-            >
-              EN
-            </button>
-            <div className="switch-slider" style={{ transform: language === 'es' ? 'translateX(100%)' : 'translateX(0)' }}></div>
-            <button
-              className={`lang-btn ${language === 'es' ? 'active' : ''}`}
-              onClick={() => setLanguage('es')}
-            >
-              ES
-            </button>
-          </div>
-
-          {/* Mobile menu toggle */}
+    <header className="navbar">
+      <a href="#top" className="navbar-name">Marvyn Harryson</a>
+      <nav className="navbar-links">
+        {SECTIONS.map((section) => (
+          <a key={section} href={`#${section}`}>{t.nav[section]}</a>
+        ))}
+      </nav>
+      <div className="language-switch" role="group" aria-label={t.nav.language}>
+        {['en', 'es'].map((code) => (
           <button
-            className="menu-toggle"
-            aria-label="Menu"
-            aria-expanded={menuOpen}
-            onClick={() => setMenuOpen(!menuOpen)}
+            key={code}
+            type="button"
+            aria-pressed={language === code}
+            onClick={() => setLanguage(code)}
           >
-            <span></span>
-            <span></span>
-            <span></span>
+            {code.toUpperCase()}
           </button>
-        </div>
+        ))}
       </div>
-    </nav>
+    </header>
   )
 }
 

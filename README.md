@@ -17,7 +17,6 @@ Portafolio personal desarrollado con React y Vite, que presenta mi experiencia c
 - **Vite 7** - Build tool y dev server
 - **JavaScript (ES6+)** - Lenguaje de programación
 - **CSS3** - Estilos y animaciones
-- **Devicon** - Iconos de tecnologías
 - **ESLint** - Linter para código limpio
 
 ## Instalación
@@ -57,12 +56,10 @@ Portfolio/
 │   │   ├── Hero/         # Sección principal
 │   │   ├── About/        # Sobre mí
 │   │   ├── Experience/   # Experiencia laboral
-│   │   ├── Projects/     # Proyectos destacados
 │   │   ├── Skills/       # Habilidades técnicas
 │   │   ├── Contact/      # Formulario de contacto
 │   │   └── Footer/       # Pie de página
 │   ├── data/
-│   │   ├── skills.js         # Datos de habilidades
 │   │   └── translations.js   # Traducciones
 │   ├── App.jsx           # Componente principal
 │   └── main.jsx          # Punto de entrada
