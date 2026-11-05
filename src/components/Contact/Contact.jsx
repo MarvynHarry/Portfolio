@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Reveal from '../Reveal/Reveal'
+import { CALENDLY_URL } from '../../data/links'
 import './Contact.css'
 
 // Clave gratuita de https://web3forms.com (definir VITE_WEB3FORMS_KEY en .env o en el secret del workflow)
@@ -67,6 +68,9 @@ function Contact({ t }) {
         <div>
           <h3>{t.contact.heading}</h3>
           <p className="contact-direct">{t.contact.direct}</p>
+          <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="contact-book">
+            {t.contact.bookCall} →
+          </a>
           <p className="contact-email">
             <a href="mailto:marvynharry@gmail.com">marvynharry@gmail.com</a>
           </p>
