@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Reveal from '../Reveal/Reveal'
 import './Contact.css'
 
 // Clave gratuita de https://web3forms.com (definir VITE_WEB3FORMS_KEY en .env o en el secret del workflow)
@@ -62,7 +63,7 @@ function Contact({ t }) {
   return (
     <section id="contact" className="section">
       <h2 className="section-title">{t.contact.title}</h2>
-      <div className="contact-body">
+      <Reveal className="contact-body">
         <div>
           <h3>{t.contact.heading}</h3>
           <p className="contact-direct">{t.contact.direct}</p>
@@ -93,7 +94,7 @@ function Contact({ t }) {
             {formStatus === 'sending' ? form.sending : form.submit}
           </button>
         </form>
-      </div>
+      </Reveal>
     </section>
   )
 }

@@ -30,11 +30,16 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 1.5rem;
+  overflow-x: clip;
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .navbar-links a::after {
+    transition: none;
   }
 }
 

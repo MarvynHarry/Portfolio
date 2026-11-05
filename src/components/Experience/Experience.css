@@ -1,6 +1,55 @@
 .experience-list {
   display: grid;
-  gap: 3rem;
+}
+
+/* Línea de tiempo: el tramo de cada empleo se dibuja al aparecer */
+.job {
+  position: relative;
+  padding: 0 0 3rem 1.75rem;
+}
+
+.job:last-child {
+  padding-bottom: 0;
+}
+
+.job::before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: 0.5rem;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  background: var(--bg);
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.job::after {
+  content: '';
+  position: absolute;
+  top: 0.5rem;
+  bottom: -0.5rem;
+  left: 4px;
+  width: 1px;
+  background: var(--line);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 1.1s cubic-bezier(0.2, 0.7, 0.2, 1) 0.2s;
+}
+
+.job.is-visible::after {
+  transform: scaleY(1);
+}
+
+.job:last-child::after {
+  display: none;
+}
+
+.job:hover::before {
+  background: var(--accent);
+  box-shadow: 0 0 0 5px rgba(217, 160, 91, 0.16);
 }
 
 .job-header {
@@ -14,6 +63,11 @@
 .job h3 {
   font-size: 1.25rem;
   font-weight: 600;
+  transition: color 0.2s;
+}
+
+.job:hover h3 {
+  color: var(--accent);
 }
 
 .job-period {
@@ -51,4 +105,16 @@
   font-family: var(--mono);
   font-size: 0.8125rem;
   color: var(--muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .job::after {
+    transform: none;
+    transition: none;
+  }
+
+  .job.is-visible::before,
+  .job h3 {
+    transition: none;
+  }
 }

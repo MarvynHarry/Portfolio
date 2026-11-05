@@ -42,11 +42,13 @@
   color: var(--text);
   font: inherit;
   font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
   border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(217, 160, 91, 0.16);
   outline: 0;
 }
 

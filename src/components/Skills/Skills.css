@@ -13,6 +13,22 @@
 
 .skills-list dt {
   color: var(--muted);
+  transition: color 0.2s, transform 0.2s;
+}
+
+.skills-list > div:hover dt {
+  color: var(--accent);
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills-list dt {
+    transition: none;
+  }
+
+  .skills-list > div:hover dt {
+    transform: none;
+  }
 }
 
 @media (max-width: 480px) {

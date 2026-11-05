@@ -1,4 +1,5 @@
 .hero {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 300px;
   gap: 4rem;
@@ -6,10 +7,102 @@
   padding: 4rem 0 5rem;
 }
 
+.hero-text,
+.hero-photo {
+  position: relative;
+}
+
+/* Fondo a todo el ancho de la ventana, por detrás del contenido */
+.hero-backdrop {
+  position: absolute;
+  top: -6rem;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  overflow: hidden;
+  pointer-events: none;
+  mask-image: linear-gradient(#000 78%, transparent);
+}
+
+.hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(217, 160, 91, 0.16), transparent 68%);
+  animation: glow-drift 18s ease-in-out infinite alternate;
+}
+
+.hero-glow-1 {
+  top: -10%;
+  right: 5%;
+  width: 620px;
+  height: 620px;
+}
+
+.hero-glow-2 {
+  bottom: -25%;
+  left: -5%;
+  width: 480px;
+  height: 480px;
+  animation-duration: 24s;
+  animation-direction: alternate-reverse;
+}
+
+.hero-tech {
+  position: absolute;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  color: var(--muted);
+  opacity: 0.28;
+  animation: tech-float 9s ease-in-out infinite alternate;
+}
+
+.hero-tech:nth-of-type(3) { top: 12%; left: 6%; animation-duration: 8s; }
+.hero-tech:nth-of-type(4) { top: 8%; left: 34%; animation-duration: 11s; animation-delay: -3s; }
+.hero-tech:nth-of-type(5) { top: 14%; left: 56%; animation-duration: 9s; animation-delay: -5s; }
+.hero-tech:nth-of-type(6) { top: 10%; right: 6%; animation-duration: 12s; animation-delay: -2s; }
+.hero-tech:nth-of-type(7) { top: 30%; left: 3%; animation-duration: 10s; animation-delay: -6s; }
+.hero-tech:nth-of-type(8) { top: 40%; right: 3%; animation-duration: 8s; animation-delay: -1s; }
+.hero-tech:nth-of-type(9) { top: 52%; left: 1.5%; animation-duration: 13s; animation-delay: -4s; }
+.hero-tech:nth-of-type(10) { top: 62%; right: 1.5%; animation-duration: 9s; animation-delay: -7s; }
+.hero-tech:nth-of-type(11) { top: 72%; left: 2%; animation-duration: 11s; animation-delay: -2s; }
+.hero-tech:nth-of-type(12) { top: 84%; right: 4%; animation-duration: 10s; animation-delay: -5s; }
+.hero-tech:nth-of-type(13) { top: 90%; left: 12%; animation-duration: 8s; animation-delay: -3s; }
+.hero-tech:nth-of-type(14) { top: 92%; left: 38%; animation-duration: 12s; animation-delay: -6s; }
+.hero-tech:nth-of-type(15) { top: 89%; left: 60%; animation-duration: 9s; animation-delay: -1s; }
+.hero-tech:nth-of-type(16) { top: 24%; right: 2%; animation-duration: 11s; animation-delay: -4s; }
+
+/* Entrada escalonada al cargar */
+.hero-text > *,
+.hero-photo {
+  animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.hero-text > h1 { animation-delay: 0.1s; }
+.hero-text > .hero-lead { animation-delay: 0.25s; }
+.hero-text > .hero-availability { animation-delay: 0.4s; }
+.hero-text > .hero-location { animation-delay: 0.45s; }
+.hero-text > .hero-links { animation-delay: 0.55s; }
+.hero-photo { animation-delay: 0.3s; }
+
 .hero-role {
   font-family: var(--mono);
   font-size: 0.875rem;
   color: var(--accent);
+}
+
+/* Efecto de escritura: la fuente mono permite animar por caracteres */
+.hero-role span {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+  border-right: 2px solid var(--accent);
+  padding-right: 2px;
+  animation:
+    typing 1.4s steps(var(--chars)) 0.3s both,
+    caret 1s step-end infinite;
 }
 
 .hero h1 {
@@ -26,10 +119,21 @@
   line-height: 1.4;
 }
 
-.hero-now {
-  max-width: 34rem;
+.hero-availability {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
   margin-top: 1.25rem;
-  color: var(--muted);
+}
+
+.hero-availability::before {
+  content: '';
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 2.4s ease-out infinite;
 }
 
 .hero-location {
@@ -51,17 +155,98 @@
   color: var(--bg);
   font-weight: 500;
   text-decoration: none;
+  transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
 }
 
 .hero-cta:hover {
   background: var(--text);
   color: var(--bg);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(217, 160, 91, 0.25);
+}
+
+/* Marco desplazado que se acerca a la foto al pasar el ratón */
+.hero-photo {
+  display: block;
+}
+
+.hero-photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--accent);
+  transform: translate(14px, 14px);
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.hero-photo:hover::before {
+  transform: translate(6px, 6px);
 }
 
 .hero-photo img {
+  position: relative;
   display: block;
   width: 100%;
   height: auto;
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.hero-photo:hover img {
+  transform: translate(-4px, -4px);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: calc(var(--chars) * 1ch + 4px);
+  }
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(217, 160, 91, 0.55);
+  }
+  70%, 100% {
+    box-shadow: 0 0 0 10px rgba(217, 160, 91, 0);
+  }
+}
+
+@keyframes glow-drift {
+  to {
+    transform: translate(-70px, 50px) scale(1.15);
+  }
+}
+
+@keyframes tech-float {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(12px);
+  }
+}
+
+/* Sin márgenes laterales suficientes, solo quedan las filas superior e inferior */
+@media (max-width: 1240px) {
+  .hero-tech:nth-of-type(n + 7):nth-of-type(-n + 12),
+  .hero-tech:nth-of-type(16) {
+    display: none;
+  }
 }
 
 @media (max-width: 760px) {
@@ -78,5 +263,32 @@
 
   .hero-lead {
     font-size: 1.25rem;
+  }
+
+  /* En pantallas pequeñas no hay márgenes libres para las etiquetas */
+  .hero-tech {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-glow,
+  .hero-tech,
+  .hero-text > *,
+  .hero-photo,
+  .hero-availability::before {
+    animation: none;
+  }
+
+  .hero-role span {
+    width: auto;
+    border-right: 0;
+    animation: none;
+  }
+
+  .hero-cta,
+  .hero-photo::before,
+  .hero-photo img {
+    transition: none;
   }
 }

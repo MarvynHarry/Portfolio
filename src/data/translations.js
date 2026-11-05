@@ -12,7 +12,7 @@ export const translations = {
       role: "Senior .NET & Cloud Engineer",
       location: "Santo Domingo, Dominican Republic",
       lead: "I build payment platforms, banking integrations and insurance systems in .NET, on AWS and Azure.",
-      now: "Currently at Red Efectiva (Paynau), working remotely with their team in Mexico. Open to freelance work and full-time roles.",
+      availability: "Open to freelance work and full-time roles",
       email: "Email me",
       downloadCV: "Download CV",
       photoAlt: "Marvyn Harryson",
@@ -31,19 +31,6 @@ export const translations = {
     experience: {
       title: "Experience",
       jobs: [
-        {
-          company: "Red Efectiva (Paynau)",
-          role: "Full Stack Engineer",
-          period: "Oct 2024 – Present",
-          location: "Mexico, remote",
-          points: [
-            "Build .NET Core services and RESTful APIs for financial transactions, deployed on AWS with ECS, S3 and RDS.",
-            "Write serverless functions in Python for AWS Lambda alongside the .NET services.",
-            "Integrate payment providers and third-party banking APIs under PCI-DSS requirements.",
-            "Tune SQL Server queries, stored procedures and indexes for transaction processing, and build React components with the product and UX teams.",
-          ],
-          stack: ".NET Core, Python, AWS, SQL Server, React, Node.js",
-        },
         {
           company: "Seguros Reservas",
           role: "Senior Software Developer",
@@ -143,7 +130,7 @@ export const translations = {
       role: "Senior .NET & Cloud Engineer",
       location: "Santo Domingo, República Dominicana",
       lead: "Construyo plataformas de pago, integraciones bancarias y sistemas de seguros en .NET, sobre AWS y Azure.",
-      now: "Actualmente en Red Efectiva (Paynau), trabajando en remoto con su equipo en México. Abierto a proyectos freelance y posiciones de tiempo completo.",
+      availability: "Abierto a proyectos freelance y posiciones de tiempo completo",
       email: "Escríbeme",
       downloadCV: "Descargar CV",
       photoAlt: "Marvyn Harryson",
@@ -162,19 +149,6 @@ export const translations = {
     experience: {
       title: "Experiencia",
       jobs: [
-        {
-          company: "Red Efectiva (Paynau)",
-          role: "Full Stack Engineer",
-          period: "Oct 2024 – Presente",
-          location: "México, remoto",
-          points: [
-            "Desarrollo servicios en .NET Core y APIs REST para transacciones financieras, desplegados en AWS con ECS, S3 y RDS.",
-            "Escribo funciones serverless en Python para AWS Lambda junto a los servicios .NET.",
-            "Integro proveedores de pago y APIs bancarias de terceros bajo los requisitos de PCI-DSS.",
-            "Optimizo consultas, procedimientos almacenados e índices de SQL Server para el procesamiento de transacciones, y construyo componentes en React con los equipos de producto y UX.",
-          ],
-          stack: ".NET Core, Python, AWS, SQL Server, React, Node.js",
-        },
         {
           company: "Seguros Reservas",
           role: "Senior Software Developer",

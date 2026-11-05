@@ -1,3 +1,4 @@
+import Reveal from '../Reveal/Reveal'
 import './Experience.css'
 
 function Experience({ t }) {
@@ -6,7 +7,7 @@ function Experience({ t }) {
       <h2 className="section-title">{t.experience.title}</h2>
       <div className="experience-list">
         {t.experience.jobs.map((job) => (
-          <article key={job.company} className="job">
+          <Reveal as="article" key={job.company} className="job">
             <header className="job-header">
               <h3>{job.company}</h3>
               <p className="job-period">{job.period}</p>
@@ -18,7 +19,7 @@ function Experience({ t }) {
               ))}
             </ul>
             <p className="job-stack">{job.stack}</p>
-          </article>
+          </Reveal>
         ))}
       </div>
     </section>

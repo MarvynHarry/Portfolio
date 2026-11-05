@@ -1,3 +1,4 @@
+import Reveal from '../Reveal/Reveal'
 import './About.css'
 
 function About({ t }) {
@@ -6,14 +7,14 @@ function About({ t }) {
       <h2 className="section-title">{t.about.title}</h2>
       <div className="about-body">
         {t.about.paragraphs.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
+          <Reveal as="p" key={paragraph}>{paragraph}</Reveal>
         ))}
         <dl className="about-facts">
-          {t.about.facts.map((fact) => (
-            <div key={fact.label}>
+          {t.about.facts.map((fact, index) => (
+            <Reveal key={fact.label} delay={index * 80}>
               <dt>{fact.label}</dt>
               <dd>{fact.value}</dd>
-            </div>
+            </Reveal>
           ))}
         </dl>
       </div>
