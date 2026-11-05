@@ -43,7 +43,6 @@ Thumbs.db
 # Backup files
 *.backup
 
-# Vercel
-.vercel
+# Environment
 .env*
 !.env.example

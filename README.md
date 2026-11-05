@@ -73,11 +73,14 @@ Portfolio/
 
 ## Despliegue
 
-El sitio se publica en **Vercel** con el dominio https://marvynharry.com. Cada push a `main` despliega a producción y cada PR genera una URL de vista previa.
+El sitio se publica en **AWS (S3 + CloudFront)** con el dominio https://marvynharry.com. Cada push a `main` lo despliega mediante `.github/workflows/deploy.yml`.
 
-- Configuración: `vercel.json` (build, cabeceras de seguridad y caché de assets)
-- Variable de entorno en Vercel: `VITE_WEB3FORMS_KEY` (formulario de contacto)
+- Infraestructura: `infra/cloudfront-site.yml` (CloudFormation, en `us-east-1`)
+- Variables de GitHub: `AWS_ROLE_ARN`, `S3_BUCKET` y `CLOUDFRONT_DISTRIBUTION_ID` (salen de los outputs del stack)
+- Secreto de GitHub: `VITE_WEB3FORMS_KEY` (formulario de contacto)
 - Build: `npm run build` → carpeta `dist/`
+
+La distribución debe estar suscrita al plan **Free** de CloudFront, con la zona de Route 53 asociada. La cuenta de AWS debe estar en el plan de pago, porque el plan gratis de CloudFront no está disponible en cuentas con el Free plan.
 
 Si el dominio cambia, actualiza `https://marvynharry.com` en `index.html`, `public/robots.txt` y `public/sitemap.xml`.
 
