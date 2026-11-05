@@ -14,6 +14,7 @@ export const translations = {
       lead: "I build payment platforms, banking integrations and insurance systems in .NET, on AWS and Azure.",
       availability: "Open to freelance work and full-time roles",
       email: "Email me",
+      bookCall: "Book a call",
       downloadCV: "Download CV",
       cvFile: "/Marvyn Harryson CV.pdf",
       cvDownloadName: "Marvyn_Harryson_CV.pdf",
@@ -116,7 +117,8 @@ export const translations = {
     contact: {
       title: "Contact",
       heading: "Have a project or a role in mind?",
-      direct: "Write to me directly, or use the form.",
+      direct: "Book a 30-minute call, write to me directly, or use the form.",
+      bookCall: "Book a call",
       form: {
         name: "Name",
         email: "Email",
@@ -147,6 +149,7 @@ export const translations = {
       lead: "Construyo plataformas de pago, integraciones bancarias y sistemas de seguros en .NET, sobre AWS y Azure.",
       availability: "Abierto a proyectos freelance y posiciones de tiempo completo",
       email: "Escríbeme",
+      bookCall: "Agenda una llamada",
       downloadCV: "Descargar CV",
       cvFile: "/Marvyn Harryson CV ES.pdf",
       cvDownloadName: "Marvyn_Harryson_CV_ES.pdf",
@@ -249,7 +252,8 @@ export const translations = {
     contact: {
       title: "Contacto",
       heading: "¿Tienes un proyecto o una posición en mente?",
-      direct: "Escríbeme directamente o usa el formulario.",
+      direct: "Agenda una llamada de 30 minutos, escríbeme directamente o usa el formulario.",
+      bookCall: "Agenda una llamada",
       form: {
         name: "Nombre",
         email: "Correo",
