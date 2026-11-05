@@ -78,7 +78,8 @@
 
   .navbar-links {
     order: 3;
+    flex-wrap: wrap;
     width: 100%;
-    gap: 1.25rem;
+    gap: 0.25rem 1.25rem;
   }
 }
