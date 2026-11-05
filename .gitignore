@@ -42,3 +42,7 @@ Thumbs.db
 
 # Backup files
 *.backup
+
+# Environment
+.env*
+!.env.example

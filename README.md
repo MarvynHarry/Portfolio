@@ -17,7 +17,6 @@ Portafolio personal desarrollado con React y Vite, que presenta mi experiencia c
 - **Vite 7** - Build tool y dev server
 - **JavaScript (ES6+)** - Lenguaje de programación
 - **CSS3** - Estilos y animaciones
-- **Devicon** - Iconos de tecnologías
 - **ESLint** - Linter para código limpio
 
 ## Instalación
@@ -57,12 +56,10 @@ Portfolio/
 │   │   ├── Hero/         # Sección principal
 │   │   ├── About/        # Sobre mí
 │   │   ├── Experience/   # Experiencia laboral
-│   │   ├── Projects/     # Proyectos destacados
 │   │   ├── Skills/       # Habilidades técnicas
 │   │   ├── Contact/      # Formulario de contacto
 │   │   └── Footer/       # Pie de página
 │   ├── data/
-│   │   ├── skills.js         # Datos de habilidades
 │   │   └── translations.js   # Traducciones
 │   ├── App.jsx           # Componente principal
 │   └── main.jsx          # Punto de entrada
@@ -73,39 +70,16 @@ Portfolio/
 
 ## Despliegue
 
-### GitHub Pages (Automático)
+El sitio se publica en **AWS (S3 + CloudFront)** con el dominio https://marvynharryson.com. Cada push a `main` lo despliega mediante `.github/workflows/deploy.yml`.
 
-El proyecto está configurado para desplegarse automáticamente en GitHub Pages mediante GitHub Actions:
+- Infraestructura: `infra/cloudfront-site.yml` (CloudFormation, en `us-east-1`)
+- Variables de GitHub: `AWS_ROLE_ARN`, `S3_BUCKET` y `CLOUDFRONT_DISTRIBUTION_ID` (salen de los outputs del stack)
+- Secreto de GitHub: `VITE_WEB3FORMS_KEY` (formulario de contacto)
+- Build: `npm run build` → carpeta `dist/`
 
-1. Cada push a la rama `main` activará el despliegue automático
-2. La página estará disponible en: https://marvynharry.github.io/Portfolio/
+La distribución debe estar suscrita al plan **Free** de CloudFront, con la zona de Route 53 asociada. La cuenta de AWS debe estar en el plan de pago, porque el plan gratis de CloudFront no está disponible en cuentas con el Free plan.
 
-El workflow de GitHub Actions se encuentra en `.github/workflows/deploy.yml`
-
-### Despliegue Manual (Opcional)
-
-Si prefieres desplegar manualmente usando gh-pages:
-
-```bash
-npm run build
-npm run deploy
-```
-
-### Otros servicios de hosting
-
-El proyecto también puede desplegarse en:
-- Vercel
-- Netlify
-- Cloudflare Pages
-
-Para generar los archivos de producción:
-```bash
-npm run build
-```
-
-Los archivos compilados estarán en la carpeta `dist/`.
-
-**Nota:** Si despliegas en otro servicio, asegúrate de ajustar el `base` en `vite.config.js` según sea necesario.
+Si el dominio cambia, actualiza `https://marvynharryson.com` en `index.html`, `public/robots.txt` y `public/sitemap.xml`.
 
 ## Autor
 
