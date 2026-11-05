@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://marvynharry.com/sitemap.xml
+Sitemap: https://marvynharryson.com/sitemap.xml

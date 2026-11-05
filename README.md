@@ -73,7 +73,7 @@ Portfolio/
 
 ## Despliegue
 
-El sitio se publica en **AWS (S3 + CloudFront)** con el dominio https://marvynharry.com. Cada push a `main` lo despliega mediante `.github/workflows/deploy.yml`.
+El sitio se publica en **AWS (S3 + CloudFront)** con el dominio https://marvynharryson.com. Cada push a `main` lo despliega mediante `.github/workflows/deploy.yml`.
 
 - Infraestructura: `infra/cloudfront-site.yml` (CloudFormation, en `us-east-1`)
 - Variables de GitHub: `AWS_ROLE_ARN`, `S3_BUCKET` y `CLOUDFRONT_DISTRIBUTION_ID` (salen de los outputs del stack)
@@ -82,7 +82,7 @@ El sitio se publica en **AWS (S3 + CloudFront)** con el dominio https://marvynha
 
 La distribución debe estar suscrita al plan **Free** de CloudFront, con la zona de Route 53 asociada. La cuenta de AWS debe estar en el plan de pago, porque el plan gratis de CloudFront no está disponible en cuentas con el Free plan.
 
-Si el dominio cambia, actualiza `https://marvynharry.com` en `index.html`, `public/robots.txt` y `public/sitemap.xml`.
+Si el dominio cambia, actualiza `https://marvynharryson.com` en `index.html`, `public/robots.txt` y `public/sitemap.xml`.
 
 ## Autor
 
