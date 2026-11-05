@@ -258,11 +258,49 @@
   }
 }
 
-/* Con menos ancho, los logos ya no tienen un sitio libre fijo */
+/* Tablet: una fila bajo el menú y otra bajo los botones, fuera del texto y la foto */
 @media (max-width: 1040px) {
+  .hero {
+    padding: 5rem 0 6rem;
+  }
+
+  .hero-backdrop {
+    mask-image: linear-gradient(#000 98%, transparent);
+  }
+
   .hero-tech {
     display: none;
+    width: 36px;
+    height: 36px;
   }
+
+  .hero-tech:nth-of-type(1),
+  .hero-tech:nth-of-type(2),
+  .hero-tech:nth-of-type(3),
+  .hero-tech:nth-of-type(6),
+  .hero-tech:nth-of-type(7),
+  .hero-tech:nth-of-type(9),
+  .hero-tech:nth-of-type(12),
+  .hero-tech:nth-of-type(19) {
+    display: block;
+    right: auto;
+  }
+
+  .hero-tech:nth-of-type(1) { top: 100px; left: 8%; }
+  .hero-tech:nth-of-type(3) { top: 100px; left: 32%; }
+  .hero-tech:nth-of-type(6) { top: 100px; left: 56%; }
+  .hero-tech:nth-of-type(9) { top: 100px; left: 82%; }
+  .hero-tech:nth-of-type(12),
+  .hero-tech:nth-of-type(19),
+  .hero-tech:nth-of-type(2),
+  .hero-tech:nth-of-type(7) {
+    top: auto;
+    bottom: 16px;
+  }
+  .hero-tech:nth-of-type(12) { left: 12%; }
+  .hero-tech:nth-of-type(19) { left: 36%; }
+  .hero-tech:nth-of-type(2) { left: 60%; }
+  .hero-tech:nth-of-type(7) { left: 84%; }
 }
 
 @media (max-width: 760px) {
@@ -280,6 +318,28 @@
   .hero-lead {
     font-size: 1.25rem;
   }
+
+  /* Móvil: seis logos en el hueco libre a la derecha de la foto */
+  .hero-tech:nth-of-type(2),
+  .hero-tech:nth-of-type(7) {
+    display: none;
+  }
+
+  .hero-tech:nth-of-type(1),
+  .hero-tech:nth-of-type(3),
+  .hero-tech:nth-of-type(6),
+  .hero-tech:nth-of-type(9),
+  .hero-tech:nth-of-type(12),
+  .hero-tech:nth-of-type(19) {
+    bottom: auto;
+  }
+
+  .hero-tech:nth-of-type(1) { top: 132px; left: 232px; }
+  .hero-tech:nth-of-type(3) { top: 170px; left: calc(100% - 44px); }
+  .hero-tech:nth-of-type(6) { top: 208px; left: 232px; }
+  .hero-tech:nth-of-type(9) { top: 246px; left: calc(100% - 44px); }
+  .hero-tech:nth-of-type(12) { top: 284px; left: 232px; }
+  .hero-tech:nth-of-type(19) { top: 322px; left: calc(100% - 44px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
