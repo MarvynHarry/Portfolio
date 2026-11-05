@@ -32,6 +32,19 @@ export const translations = {
       title: "Experience",
       jobs: [
         {
+          company: "Red Efectiva (Paynau)",
+          role: "Full Stack Engineer",
+          period: "Oct 2024 – Present",
+          location: "Mexico, remote",
+          points: [
+            "Build .NET Core services and RESTful APIs for financial transactions, deployed on AWS with ECS, S3 and RDS.",
+            "Write serverless functions in Python for AWS Lambda alongside the .NET services.",
+            "Integrate payment providers and third-party banking APIs under PCI-DSS requirements.",
+            "Tune SQL Server queries, stored procedures and indexes for transaction processing, and build React components with the product and UX teams.",
+          ],
+          stack: ".NET Core, Python, AWS, SQL Server, React, Node.js",
+        },
+        {
           company: "Seguros Reservas",
           role: "Senior Software Developer",
           period: "Feb 2024 – Sep 2024",
@@ -149,6 +162,19 @@ export const translations = {
     experience: {
       title: "Experiencia",
       jobs: [
+        {
+          company: "Red Efectiva (Paynau)",
+          role: "Full Stack Engineer",
+          period: "Oct 2024 – Presente",
+          location: "México, remoto",
+          points: [
+            "Desarrollo servicios en .NET Core y APIs REST para transacciones financieras, desplegados en AWS con ECS, S3 y RDS.",
+            "Escribo funciones serverless en Python para AWS Lambda junto a los servicios .NET.",
+            "Integro proveedores de pago y APIs bancarias de terceros bajo los requisitos de PCI-DSS.",
+            "Optimizo consultas, procedimientos almacenados e índices de SQL Server para el procesamiento de transacciones, y construyo componentes en React con los equipos de producto y UX.",
+          ],
+          stack: ".NET Core, Python, AWS, SQL Server, React, Node.js",
+        },
         {
           company: "Seguros Reservas",
           role: "Senior Software Developer",
