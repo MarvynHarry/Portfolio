@@ -73,39 +73,13 @@ Portfolio/
 
 ## Despliegue
 
-### GitHub Pages (Automático)
+El sitio se publica en **Vercel** con el dominio https://marvynharry.com. Cada push a `main` despliega a producción y cada PR genera una URL de vista previa.
 
-El proyecto está configurado para desplegarse automáticamente en GitHub Pages mediante GitHub Actions:
+- Configuración: `vercel.json` (build, cabeceras de seguridad y caché de assets)
+- Variable de entorno en Vercel: `VITE_WEB3FORMS_KEY` (formulario de contacto)
+- Build: `npm run build` → carpeta `dist/`
 
-1. Cada push a la rama `main` activará el despliegue automático
-2. La página estará disponible en: https://marvynharry.github.io/Portfolio/
-
-El workflow de GitHub Actions se encuentra en `.github/workflows/deploy.yml`
-
-### Despliegue Manual (Opcional)
-
-Si prefieres desplegar manualmente usando gh-pages:
-
-```bash
-npm run build
-npm run deploy
-```
-
-### Otros servicios de hosting
-
-El proyecto también puede desplegarse en:
-- Vercel
-- Netlify
-- Cloudflare Pages
-
-Para generar los archivos de producción:
-```bash
-npm run build
-```
-
-Los archivos compilados estarán en la carpeta `dist/`.
-
-**Nota:** Si despliegas en otro servicio, asegúrate de ajustar el `base` en `vite.config.js` según sea necesario.
+Si el dominio cambia, actualiza `https://marvynharry.com` en `index.html`, `public/robots.txt` y `public/sitemap.xml`.
 
 ## Autor
 
