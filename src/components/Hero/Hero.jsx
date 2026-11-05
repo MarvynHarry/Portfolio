@@ -25,7 +25,7 @@ function Hero({ t }) {
         <p className="hero-location">{t.hero.location}</p>
         <div className="hero-links">
           <a href="mailto:marvynharry@gmail.com" className="hero-cta">{t.hero.email}</a>
-          <a href="/Marvyn Harryson CV.pdf" download="Marvyn_Harryson_CV.pdf">{t.hero.downloadCV}</a>
+          <a href={t.hero.cvFile} download={t.hero.cvDownloadName}>{t.hero.downloadCV}</a>
           <a href="https://www.linkedin.com/in/marvynharry/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href="https://github.com/marvynharry" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>

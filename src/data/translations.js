@@ -15,6 +15,8 @@ export const translations = {
       availability: "Open to freelance work and full-time roles",
       email: "Email me",
       downloadCV: "Download CV",
+      cvFile: "/Marvyn Harryson CV.pdf",
+      cvDownloadName: "Marvyn_Harryson_CV.pdf",
       photoAlt: "Marvyn Harryson",
     },
     about: {
@@ -146,6 +148,8 @@ export const translations = {
       availability: "Abierto a proyectos freelance y posiciones de tiempo completo",
       email: "Escríbeme",
       downloadCV: "Descargar CV",
+      cvFile: "/Marvyn Harryson CV ES.pdf",
+      cvDownloadName: "Marvyn_Harryson_CV_ES.pdf",
       photoAlt: "Marvyn Harryson",
     },
     about: {
