@@ -1,9 +1,8 @@
 import './Hero.css'
 
-const FLOATING_TECH = [
-  'C#', '.NET', 'ASP.NET Core', 'AWS', 'Azure', 'SQL Server', 'Kubernetes',
-  'Terraform', 'Docker', 'React', 'Angular', 'Redis', 'Oracle', 'Python'
-]
+const FLOATING_LOGOS = Object.values(
+  import.meta.glob('../../assets/tech/*.svg', { eager: true, query: '?url', import: 'default' })
+)
 
 function Hero({ t }) {
   return (
@@ -11,8 +10,8 @@ function Hero({ t }) {
       <div className="hero-backdrop" aria-hidden="true">
         <span className="hero-glow hero-glow-1"></span>
         <span className="hero-glow hero-glow-2"></span>
-        {FLOATING_TECH.map((tech) => (
-          <span key={tech} className="hero-tech">{tech}</span>
+        {FLOATING_LOGOS.map((logo) => (
+          <img key={logo} src={logo} alt="" className="hero-tech" width="44" height="44" loading="lazy" decoding="async" />
         ))}
       </div>
 
