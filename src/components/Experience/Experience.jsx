@@ -2,35 +2,24 @@ import './Experience.css'
 
 function Experience({ t }) {
   return (
-    <section id="experience" className="experience">
-      <div className="container">
-        <div className="section-header">
-          <span className="section-label">{t.experience.label}</span>
-          <h2 className="section-title">{t.experience.title}</h2>
-        </div>
-
-        <div className="experience-timeline">
-          {t.experience.jobs.map((exp, index) => (
-            <div key={index} className="timeline-item" style={{ animationDelay: `${index * 0.2}s` }}>
-              <div className="timeline-dot"></div>
-              <div className="timeline-content">
-                <div className="timeline-header">
-                  <div>
-                    <h3>{exp.role}</h3>
-                    <p className="company">{exp.company}</p>
-                  </div>
-                  <span className="period">{exp.period}</span>
-                </div>
-                <p className="description">{exp.description}</p>
-                <ul className="achievements">
-                  {exp.achievements.map((achievement, i) => (
-                    <li key={i}>{achievement}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
-        </div>
+    <section id="experience" className="section">
+      <h2 className="section-title">{t.experience.title}</h2>
+      <div className="experience-list">
+        {t.experience.jobs.map((job) => (
+          <article key={job.company} className="job">
+            <header className="job-header">
+              <h3>{job.company}</h3>
+              <p className="job-period">{job.period}</p>
+            </header>
+            <p className="job-role">{job.role} · {job.location}</p>
+            <ul>
+              {job.points.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
+            <p className="job-stack">{job.stack}</p>
+          </article>
+        ))}
       </div>
     </section>
   )
